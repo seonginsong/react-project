@@ -72,7 +72,7 @@ export default function AddCustomer() {
                 <option value="">Store 선택</option>
                 {storeList.map(store => (
                     <option key={store.storeId} value={store.storeId}>
-                    {store.storeId} - {store.address}
+                    {store.storeId} - {store.addressEntity.address}
                     </option>
                 ))}
             </select>
