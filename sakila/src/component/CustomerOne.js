@@ -29,9 +29,10 @@ export default function CustomerOne() {
       <p><strong>Customer ID:</strong> {customerData.customerId}</p>
       <p><strong>Customer 이름:</strong> {customerData.firstName} {customerData.lastName}</p>
       <p><strong>email:</strong> {customerData.email}</p>
-      <p><strong>Country:</strong> <Link to={`/CountryOne/${customerData.addressEntity.cityEntity.countryEntity.countryId}`}>{customerData.addressEntity.cityEntity.countryEntity.country}</Link></p>
-      <p><strong>City:</strong> <Link to={`/CityOne/${customerData.addressEntity.cityEntity.cityId}`}>{customerData.addressEntity.cityEntity.city}</Link></p>
-      <p><strong>Address:</strong> <Link to={`/AddressOne/${customerData.addressEntity.addressId}`}>{customerData.addressEntity.address}</Link></p>
+      <p><strong>Country:</strong> <Link to={`/CountryOne/${customerData.addressEntity.cityEntity.countryEntity.countryId}`} className="hover:bg-gray-200">{customerData.addressEntity.cityEntity.countryEntity.country}</Link></p>
+      <p><strong>City:</strong> <Link to={`/CityOne/${customerData.addressEntity.cityEntity.cityId}`} className="hover:bg-gray-200">{customerData.addressEntity.cityEntity.city}</Link></p>
+      <p><strong>Customer Address:</strong> <Link to={`/AddressOne/${customerData.addressEntity.addressId}`} className="hover:bg-gray-200">{customerData.addressEntity.address}</Link></p>
+      <p><strong>Store Address:</strong> <Link to={`/AddressOne/${customerData.storeEntity.addressEntity.addressId}`} className="hover:bg-gray-200">{customerData.storeEntity.addressEntity.address}</Link></p>
       <p><strong>마지막 업데이트:</strong> {customerData.lastUpdate}</p>
       
     </div>

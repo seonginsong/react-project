@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 
 export default function CountryOne() {
     const { countryId } = useParams();  // URL 파라미터 받아오기
     const [countryData, setCountryData] = useState(null);
     const [loading, setLoading] = useState(true);
+    const nav = useNavigate();
 
   useEffect(() => {
     // countryId를 사용해서 API 호출
@@ -30,6 +31,9 @@ export default function CountryOne() {
       <p><strong>Country ID:</strong> {countryData.countryId}</p>
       <p><strong>Country 이름:</strong> {countryData.country}</p>
       <p><strong>마지막 업데이트:</strong> {countryData.lastUpdate}</p>
+      <button onClick={() => nav("/AddCity", { state: { countryId: countryData.countryId } })} className="bg-gray-300 hover:bg-gray-600 text-white font-semibold py-1 px-4 rounded-lg transition">
+        이 나라에 City 추가
+      </button>
     </div>
   );
 }
